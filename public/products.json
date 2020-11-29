@@ -1,0 +1,69 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Giấy A4 Double A/70",
+        "price": 65000,
+        "image": { "fields": { "file": { "url": "./images/product-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "bìa còng Thiên Long a4 7 phân 1 mặt si",
+        "price": 34000,
+        "image": { "fields": { "file": { "url": "./images/product-2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "balo học sinh chống gù lưng cao cấp",
+        "price": 290000,
+        "image": { "fields": { "file": { "url": "./images/product-3.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "hộp màu 150 chi tiết (dành cho trẻ từ 6 tuổi)",
+        "price": 90000,
+        "image": { "fields": { "file": { "url": "./images/product-4.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "bút máy luyện chữ đẹp kim thành 56",
+        "price": 45000,
+        "image": { "fields": { "file": { "url": "./images/product-5.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "bút bi flexoffice FO-024",
+        "price": 3000,
+        "image": { "fields": { "file": { "url": "./images/product-6.jpg" } } }
+      }
+    }
+    ,
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "máy tính casio fx-580VN X",
+        "price": 550000,
+        "image": { "fields": { "file": { "url": "./images/product-7.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "vở kẻ ngang campus ENJOY 120trang",
+        "price": 10000,
+        "image": { "fields": { "file": { "url": "./images/product-8.jpg" } } }
+      }
+    }
+  ]
+}

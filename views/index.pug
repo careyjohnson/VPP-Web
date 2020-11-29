@@ -1,0 +1,372 @@
+extends layout
+
+block content
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  // slick slider
+  link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
+  // custom CSS
+  link(rel='stylesheet' href='/stylesheets/styles.css')
+  // header
+  header
+    .container
+      .row
+        .col-md-4.col-sm-12.col-12
+          span.hotline
+            | Hotline: 
+            a(href='tel:083.283.6868') 083.283.6868
+        .col-md-4.col-12.text-center
+          a(href='index.html')
+            img(src='/images/logo.png' alt='logo' width='250px')
+        .col-md-4.col-12.text-right
+          p.my-md-4.header-links
+            if !authorized
+              a.px-2(href='/login') &Dstrok;&abreve;ng nh&#x1EAD;p
+              a.px-1(href='#') &Dstrok;&abreve;ng k&yacute;
+            else
+              a.px-2(href='/users/logout')
+                i.fas.fa-sign-out-alt
+    // navbar
+    .container-fluid.p-0
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item.home
+              a.nav-link.active(href='#home') TRANG CH&#x1EE6;
+            li.nav-item
+              a.nav-link(href='#vpp') V&Abreve;N PH&Ograve;NG PH&#x1EA8;M
+              .dropdown
+                ul
+                  li.dropdown-link
+                    a(href='#') Link 1
+                  li.dropdown-link
+                    a(href='#') Link 2
+                  li.dropdown-link
+                    a(href='#') Link 3
+                  li.dropdown-link
+                    a(href='#') Link 4
+            li.nav-item
+              a.nav-link(href='#dungcu') D&#x1EE4;NG C&#x1EE4; H&#x1ECC;C T&#x1EAC;P
+              .dropdown
+                ul
+                  li.dropdown-link
+                    a(href='#') Link 1
+                  li.dropdown-link
+                    a(href='#') Link 2
+                  li.dropdown-link
+                    a(href='#') Link 3
+                  li.dropdown-link
+                    a(href='#') Link 4
+            li.nav-item
+              a.nav-link(href='#trangtri') TRANG TR&Iacute; - QU&Agrave; T&#x1EB6;NG
+              .dropdown
+                ul
+                  li.dropdown-link
+                    a(href='#') Link 1
+                  li.dropdown-link
+                    a(href='#') Link 2
+                  li.dropdown-link
+                    a(href='#') Link 3
+                  li.dropdown-link
+                    a(href='#') Link 4
+            li.nav-item
+              a.nav-link(href='#dongho') &Dstrok;&#x1ED2;NG H&#x1ED2;
+              .dropdown
+                ul
+                  li.dropdown-link
+                    a(href='#') Link 1
+                  li.dropdown-link
+                    a(href='#') Link 2
+                  li.dropdown-link
+                    a(href='#') Link 3
+                  li.dropdown-link
+                    a(href='#') Link 4
+            li.nav-item
+              a.nav-link(href='#khac') KH&Aacute;C
+              .dropdown
+                ul
+                  li.dropdown-link
+                    a(href='#') Link 1
+                  li.dropdown-link
+                    a(href='#') Link 2
+                  li.dropdown-link
+                    a(href='#') Link 3
+                  li.dropdown-link
+                    a(href='#') Link 4
+        .navbar-nav
+          li.nav-item.search-icon
+            i.fas.fa-search.p-2
+          li.nav-item.cart-icon
+            span.nav-icon
+              i.fas.fa-cart-plus.p-2
+            .cart-items 0
+        // end of navbar
+  // end of header
+  // main section
+  main
+    // first slider
+    .container-fluid.p-0
+      .site-slider
+        .slider-one
+          div
+            img.img-fluid(src='/images/slider1.jpg' alt='Slider 1')
+          div
+            img.img-fluid(src='/images/slider2.jpg' alt='Slider 2')
+          div
+            img.img-fluid(src='/images/slider3.jpg' alt='Slider 3')
+          div
+            img.img-fluid(src='/images/slider4.jpg' alt='Slider 4')
+          div
+            img.img-fluid(src='/images/slider5.png' alt='Slider 5')
+        .slider-btn
+          span.prev.position-top
+            i.fas.fa-chevron-left
+          span.next.position-top.right-0
+            i.fas.fa-chevron-right
+    // end of first slider
+    // second slider
+    .container-fluid
+      .site-slider-two.px-md-4
+        .row.slider-two.text-center
+          .col-md-2.product.pt-md-5.pt-4
+            img(src='/images/slider21.png' alt='categories1')
+            a.slider2(href='#vpp')
+              span.border.site-btn.btn-span V&Abreve;N PH&Ograve;NG PH&#x1EA8;M
+          .col-md-2.product.pt-md-5.pt-4
+            img(src='/images/slider22.png' alt='categories2')
+            a(href='#dungcu')
+              span.border.site-btn.btn-span D&#x1EE4;NG C&#x1EE4; H&#x1ECC;C T&#x1EAC;P
+          .col-md-2.product.pt-md-5.pt-4
+            img(src='/images/slider23.jpg' alt='categories3')
+            a(href='#trangtri')
+              span.border.site-btn.btn-span QU&Agrave; T&#x1EB6;NG
+          .col-md-2.product.pt-md-5.pt-4
+            img(src='/images/slider24.jpeg' alt='categories4')
+            a(href='#dongho')
+              span.border.site-btn.btn-span &Dstrok;&#x1ED2;NG H&#x1ED2;
+          .col-md-2.product.pt-md-5.pt-4
+            img(src='/images/slider26.jpg' alt='categories6')
+            a(href='#trangtri')
+              span.border.site-btn.btn-span TRANG TR&Iacute;
+          .col-md-2.product.pt-md-5.pt-4
+            img(src='/images/slider25.png' alt='categories5')
+            a(href='#khac')
+              span.border.site-btn.btn-span KH&Aacute;C
+        .slider-btn
+          span.prev.position-top
+            i.fas.fa-chevron-left.fa-2x.text-secondary
+          span.next.position-top.right-0
+            i.fas.fa-chevron-right.fa-2x.text-secondary
+    // end of second slider
+  // end of main section
+  hr
+  // Products
+  section.products
+    .section-title
+      h2 S&#x1EA2;N PH&#x1EA8;M B&Aacute;N CH&#x1EA0;Y
+    .products-center
+      // Single product
+      article.product
+        .img-container
+          img.product-img(src='/images/product-1.jpg' alt='product')
+          button.bag-btn(data-id='1')
+            i.fas.fa-shopping-cart
+            |               Th&ecirc;m v&agrave;o gi&#x1ECF; h&agrave;ng
+        h3 Gi&#x1EA5;y Double A A4/70
+        h4 650000
+      // end of single product
+  // end of products
+  hr
+  // Văn phòng phẩm
+  section#vpp.vpp
+    .section-title
+      h2 V&abreve;n ph&ograve;ng ph&#x1EA9;m
+    .products-center
+      // Single product
+      article.product
+        .img-container
+          img.product-img(src='/images/product-1.jpg' alt='product')
+          button.bag-btn(data-id='1')
+            i.fas.fa-shopping-cart
+            |               Th&ecirc;m v&agrave;o gi&#x1ECF; h&agrave;ng
+        h3 Gi&#x1EA5;y Double A A4/70
+        h4 650000
+      // end of single product
+  // end of vpp
+  hr
+  // Dung cu hoc tap
+  section#dungcu.dungcu
+    .section-title
+      h2 D&#x1EE5;ng c&#x1EE5; h&#x1ECD;c t&#x1EAD;p
+    .products-center
+      // Single product
+      article.product
+        .img-container
+          img.product-img(src='/images/product-1.jpg' alt='product')
+          button.bag-btn(data-id='1')
+            i.fas.fa-shopping-cart
+            |               Th&ecirc;m v&agrave;o gi&#x1ECF; h&agrave;ng
+        h3 Gi&#x1EA5;y Double A A4/70
+        h4 650000
+      // end of single product
+  // end of dcht
+  hr
+  // Trang tri - qua tang
+  section#trangtri.trangtri
+    .section-title
+      h2 Trang tr&iacute; - Qu&agrave; t&#x1EB7;ng
+    .products-center
+      // Single product
+      article.product
+        .img-container
+          img.product-img(src='/images/product-1.jpg' alt='product')
+          button.bag-btn(data-id='1')
+            i.fas.fa-shopping-cart
+            |               Th&ecirc;m v&agrave;o gi&#x1ECF; h&agrave;ng
+        h3 Gi&#x1EA5;y Double A A4/70
+        h4 650000
+      // end of single product
+  // end of tt-qt
+  hr
+  // Dong ho
+  section#dongho.dongho
+    .section-title
+      h2 &Dstrok;&#x1ED3;ng h&#x1ED3;
+    .products-center
+      // Single product
+      article.product
+        .img-container
+          img.product-img(src='/images/product-1.jpg' alt='product')
+          button.bag-btn(data-id='1')
+            i.fas.fa-shopping-cart
+            |               Th&ecirc;m v&agrave;o gi&#x1ECF; h&agrave;ng
+        h3 Gi&#x1EA5;y Double A A4/70
+        h4 650000
+      // end of single product
+  // end of dong ho
+  hr
+  // Khac
+  section#khac.khac
+    .section-title
+      h2 S&#x1EA3;n ph&#x1EA9;m kh&aacute;c
+    .products-center
+      // Single product
+      article.product
+        .img-container
+          img.product-img(src='/images/product-1.jpg' alt='product')
+          button.bag-btn(data-id='1')
+            i.fas.fa-shopping-cart
+            |               Th&ecirc;m v&agrave;o gi&#x1ECF; h&agrave;ng
+        h3 Gi&#x1EA5;y Double A A4/70
+        h4 650000
+      // end of single product
+  // end of khac
+  // Cart
+  .cart-overlay
+    .cart
+      span.close-cart
+        i.fas.fa-window-close
+      h2 Gi&#x1ECF; h&agrave;ng
+      .cart-content
+        // Cart Item
+        //
+          <div class="cart-item">
+          </div>
+        // End of cart item
+      .cart-footer
+        h3
+          | T&#x1ED5;ng C&#x1ED9;ng : 
+          span.cart-total
+          | &dstrok;
+        button.clear-cart.banner-btn x&oacute;a h&#x1EBF;t
+  // end of cart
+  // footer
+  footer.page-footer.bg-dark
+    //
+      <div class="bg-success">
+      <div class="container">
+      <div class="row py-4 d-flex align-items-center">
+      <div class="col-md-12 text-center">
+      <a href="https://www.facebook.com/carey.johnson.18041/">
+      <p>
+      <class class="fa fa-facebook-official" aria-hidden="true"></class></i>Facebook
+      </p>
+      </a>
+      <a href="https://www.youtube.com/channel/UCajl9ArY14d6He_N5vgNlCA?view_as=subscriber">
+      <p><i class="fa fa-youtube-play" aria-hidden="true"></i>Youtube</p>
+      </a>
+      <a href="https://www.instagram.com/iammai121/?fbclid=IwAR1xVOlUgIrwwJN0EbZxRcPuSIS58SYEyxInt1cW9IoYW9OkbTGYTf2QRls">
+      <p><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</p>
+      </a>
+      <a href="https://shopee.vn/user/account/profile">
+      <p><i class="fa fa-shopping-bag"></i>Shopee</p>
+      </a>
+      </div>
+      </div>
+      </div>
+      </div>
+    .container.py-5.text-center.text-md-left.mt-5
+      .row
+        .col-md-3.mx-auto.mb-4
+          a(href='index.html')
+            img(src='/images/logo2.png' width='200px' alt='logo')
+          // <h6 class="text-uppercase font-weight-bold text-white">LIÊN KẾT VỚI CHÚNG TÔI</h6>
+          // <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:125px; height:2px">
+          p.mt-2.text-white Website b&aacute;n h&agrave;ng tr&#x1EF1;c tuy&#x1EBF;n thu&#x1ED9;c v&abreve;n ph&ograve;ng ph&#x1EA9;m Thanh H&#x1B0;&#x1A1;ng
+        .col-md-3.mx-auto.mb-4
+          h6.text-uppercase.font-weight-bold.text-white h&#x1B0;&#x1EDB;ng d&#x1EAB;n
+          hr.bg-light.mb-4.mt-0.d-inline-block.mx-auto(style='width:95px; height:1px')
+          ul.list-unstyled
+            p.my-a
+              a.text-white(href='#') &Dstrok;i&#x1EC1;u kho&#x1EA3;n
+            p.my-a
+              a.text-white(href='#') H&#x1B0;&#x1EDB;ng d&#x1EAB;n mua h&agrave;ng
+            p.my-a
+              a.text-white(href='#') Ch&iacute;nh s&aacute;ch &dstrok;&#x1ED5;i tr&#x1EA3;
+            p.my-a
+              a.text-white(href='#') Ch&iacute;nh s&aacute;ch thanh to&aacute;n
+            p.my-a
+              a.text-white(href='#') B&#x1EA3;o m&#x1EAD;t th&ocirc;ng tin kh&aacute;ch h&agrave;ng
+        .col-md-3.mx-auto.mb-4
+          h6.text-uppercase.font-weight-bold.text-white li&ecirc;n k&#x1EBF;t v&#x1EDB;i ch&uacute;ng t&ocirc;i
+          hr.bg-light.mb-4.mt-0.d-inline-block.mx-auto(style='width:195px; height:1px')
+          ul.list-unstyled
+            a.text-white(href='https://www.facebook.com/carey.johnson.18041/')
+              p
+                i.fab.fa-facebook-square(aria-hidden='true')
+                |  Facebook
+            a.text-white(href='https://www.youtube.com/channel/UCajl9ArY14d6He_N5vgNlCA?view_as=subscriber')
+              p
+                i.fab.fa-youtube(aria-hidden='true')
+                |  Youtube
+            a.text-white(href='https://www.instagram.com/iammai121/?fbclid=IwAR1xVOlUgIrwwJN0EbZxRcPuSIS58SYEyxInt1cW9IoYW9OkbTGYTf2QRls')
+              p
+                i.fab.fa-instagram(aria-hidden='true')
+                |  Instagram
+            a.text-white(href='https://shopee.vn/user/account/profile')
+              p
+                i.fas.fa-shopping-bag
+                |  Shopee
+        .col-md-3.mx-auto.mb-4
+          h6.text-uppercase.font-weight-bold.text-white th&ocirc;ng tin li&ecirc;n h&#x1EC7;
+          hr.bg-light.mb-4.mt-0.d-inline-block.mx-auto(style='width:150px; height:1px')
+          ul.list-unstyled
+            p.text-white
+              i.fas.fa-map-marker-alt
+              |  Ng&atilde; T&#x1B0; K&ecirc;nh &Dstrok;&agrave;o, An M&#x1EF9;, M&#x1EF9; &Dstrok;&#x1EE9;c, H&agrave; N&#x1ED9;i
+            p.text-white
+              i.fas.fa-mobile-alt
+              |  083 283 6868 - 0969 324 315 - 0967 815 200
+            p.text-white
+              i.fas.fa-envelope
+              |  huong231069@gmail.com
+  // end of footer
+  script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+  script(type='text/javascript' src='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
+  script(src='/javascripts/slider.js')
+  script(src='/javascripts/app.js')
+  script(src='/javascripts/nav.js')

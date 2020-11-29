@@ -1,0 +1,47 @@
+extends layout
+
+block content
+	// font awesome, bootstrap
+	link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf' crossorigin='anonymous')
+	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+	// custom CSS
+	link(rel='stylesheet' href='/stylesheets/login-registration.css')
+	.container
+		.forms-container
+			.signin-signup
+				form.sign-in-form(action='/users/auth')
+					a(href='/')
+						img(src='/images/logo.png' alt='logo' width='200px')
+					.input-field
+						i.fas.fa-user
+						input(name='username' placeholder='Username')
+					.input-field
+						i.fas.fa-lock
+						input(type='password' name='password' placeholder='**********')
+					input.btn.solid(type='submit' value='Đăng nhập')
+				form.sign-up-form(action='#')
+					h2.title T&#x1EA1;o t&agrave;i kho&#x1EA3;n
+					.input-field
+						i.fas.fa-user
+						input(type='email' placeholder='Email')
+					.input-field
+						i.fas.fa-lock
+						input(type='password' placeholder='Mật khẩu')
+					.input-field
+						i.fas.fa-lock
+						input(type='password' placeholder='Nhập lại mật khẩu')
+					input.btn(type='submit' value='Đăng ký')
+					p
+						| Quay v&#x1EC1; 
+						a(href='index.html') Trang ch&#x1EE7; &gt;
+		.panels-container
+			.panel.left-panel
+				.content
+					h3 B&#x1EA1;n ch&#x1B0;a c&oacute; t&agrave;i kho&#x1EA3;n?
+					button#sign-up-btn.btn.transparent(onclick="window.location.href='/registration'") &Dstrok;&abreve;ng k&yacute; ngay
+				img.image(src='/images/login.svg')
+			.panel.right-panel
+				.content
+					h3 B&#x1EA1;n &dstrok;&atilde; c&oacute; t&agrave;i kho&#x1EA3;n?
+					button#sign-in-btn.btn.transparent &Dstrok;&abreve;ng nh&#x1EAD;p
+				img.image(src='/images/regis.svg')

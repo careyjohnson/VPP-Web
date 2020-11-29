@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    // font awesome, bootstrap
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    // custom CSS
+    link(rel='stylesheet' href='/stylesheets/login-registration.css')
+    .container.sign-up-mode
+        .forms-container
+                .signin-signup
+                    form.sign-up-form(action='/users' method='post')
+                        h2.title T&#x1EA1;o t&agrave;i kho&#x1EA3;n
+                        .input-field
+                            i.fas.fa-user
+                            input(name='username' placeholder='Tên đăng nhập')
+                        .input-field
+                            i.fas.fa-lock
+                            input(name='password' type='password' placeholder='Mật khẩu')
+                        .input-field
+                            i.fas.fa-lock
+                            input(type='password' placeholder='Nhập lại mật khẩu')
+                        .input-field
+                            i.fas.fa-user
+                            input(name='name' placeholder='Tên')
+                        .input-field
+                            i.fas.fa-envelope
+                            input(name='email' type='email' placeholder='Email')
+                        input.btn(type='submit' value='Đăng ký')
+                        p
+                            | Quay v&#x1EC1; 
+                            a(href='/') Trang ch&#x1EE7; &gt;
+        .panels-container
+            .panel.left-panel
+                .content
+                    h3 Bạn đã có tài khoản?
+                    button#sign-up-btn.btn.transparent Đăng ký
+                img.image(src='/images/login.svg')
+            .panel.right-panel
+                .content
+                    h3 Bạn có tài khoản rồi
+                    button#sign-in-btn.btn.transparent(onclick="window.location.href='/login'") Đăng nhập
+                img.image(src='/images/regis.svg')
